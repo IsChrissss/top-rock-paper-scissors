@@ -8,13 +8,16 @@ function getComputerChoice() {
         case 3:
             return "Scissors";
     }
-};
+}
 
-console.log(`Computer choose: ${getComputerChoice()}`);
+/* console.log(`Computer choose: ${getComputerChoice()}`); */
 
 function getHumanChoice() {
     humanChoice = prompt("Choose between rock, paper or scissors: ")
     return humanChoice;
 }
 
-console.log(`Human choose: ${getHumanChoice()}`);
+/* console.log(`Human choose: ${getHumanChoice()}`); */
+
+let humanScore = 0;
+let computerScore = 0;
