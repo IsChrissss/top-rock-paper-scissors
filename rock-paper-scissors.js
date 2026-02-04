@@ -28,14 +28,33 @@ function playRound(humanChoice, computerChoice) {
         (humanChoice === 'Paper' && computerChoice === 'Rock') ||
         (humanChoice === 'Scissors' && computerChoice === 'Paper')) {
             humanChoice += 1;
-            console.log('You won!')
+            console.log('You won!');
+    } else if ((humanChoice === 'Rock' && computerChoice === 'Rock') ||
+        (humanChoice === 'Paper' && computerChoice === 'Paper') ||
+        (humanChoice === 'Scissors' && computerChoice === 'Scissors')) {
+            console.log('Draw');
     } else {
         computerChoice += 1;
         console.log(`You lost: ${computerChoice} beats ${humanChoice}`)
     }
 }
 
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+function playGame() {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+    
+    playRound(humanSelection, computerSelection);
+}
+
+for (let i = 1; i <= 5; i++) {
+    playGame()
+}
+
+if (humanScore > computerScore) {
+    console.log('Human wins!');
+} else if (humanScore < computerScore){
+    console.log('Computer wins!')
+} else {
+    console.log('It is a draw!')
+}
