@@ -20,26 +20,27 @@ function getHumanChoice() {
 
 /* console.log(`Human choose: ${getHumanChoice()}`); */
 
-function playRound(humanChoice, computerChoice) {
-    if ((humanChoice === 'Rock' && computerChoice === 'Scissors') ||
-        (humanChoice === 'Paper' && computerChoice === 'Rock') ||
-        (humanChoice === 'Scissors' && computerChoice === 'Paper')) {
-            humanChoice += 1;
-            console.log('You won!');
-    } else if ((humanChoice === 'Rock' && computerChoice === 'Rock') ||
-        (humanChoice === 'Paper' && computerChoice === 'Paper') ||
-        (humanChoice === 'Scissors' && computerChoice === 'Scissors')) {
-            console.log('Draw');
-    } else {
-            computerChoice += 1;
-            console.log(`You lost: ${computerChoice} beats ${humanChoice}`);
-    }
-}
 
 
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
+    
+    function playRound(humanChoice, computerChoice) {
+        if ((humanChoice === 'Rock' && computerChoice === 'Scissors') ||
+            (humanChoice === 'Paper' && computerChoice === 'Rock') ||
+            (humanChoice === 'Scissors' && computerChoice === 'Paper')) {
+                console.log('You won!');
+                ++humanScore;
+        } else if ((humanChoice === 'Rock' && computerChoice === 'Rock') ||
+            (humanChoice === 'Paper' && computerChoice === 'Paper') ||
+            (humanChoice === 'Scissors' && computerChoice === 'Scissors')) {
+                console.log('Draw');
+        } else {
+            console.log(`You lost: ${computerChoice} beats ${humanChoice}`);
+            ++computerScore;
+        }
+    }
     
     for (let i = 1; i <= 5; i++) {
         let humanSelection = getHumanChoice();
