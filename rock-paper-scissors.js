@@ -30,7 +30,7 @@ function playGame() {
         if ((humanChoice === 'Rock' && computerChoice === 'Scissors') ||
             (humanChoice === 'Paper' && computerChoice === 'Rock') ||
             (humanChoice === 'Scissors' && computerChoice === 'Paper')) {
-                console.log('You won!');
+                console.log(`You won: ${humanChoice} beats ${computerChoice}`);
                 ++humanScore;
         } else if ((humanChoice === 'Rock' && computerChoice === 'Rock') ||
             (humanChoice === 'Paper' && computerChoice === 'Paper') ||
